@@ -26,11 +26,11 @@ jobs:
 
       - run: cd /home/ajax/actions-runner/_work/redrock_software/redrock_software/client && npm ci && npm run build
       - run: npm ci
-      - run: cp /home/ajax/config.js /home/ajax/actions-runner/_work/redrock/redrock/server/config.js
-      - run: cp /home/ajax/credentials.json /home/ajax/actions-runner/_work/redrock/redrock/server/Tracking/credentials.json
+      - run: cp /home/ajax/config.js /home/ajax/actions-runner/_work/redrock_software/redrock_software/server/config.js
+      - run: cp /home/ajax/credentials.json /home/ajax/actions-runner/_work/redrock_software/redrock_software/server/Tracking/credentials.json
       - run: pm2 delete server
         continue-on-error: true
       - run: pm2 flush
-      - run: cd /home/ajax/actions-runner/_work/redrock/redrock && rm -rf client README_images README.md .git .gitignore .github
+      - run: cd /home/ajax/actions-runner/_work/redrock_software/redrock_software && rm -rf client README_images README.md .git .gitignore .github
         continue-on-error: true
       - run: NODE_ENV=PROD pm2 start server.js
