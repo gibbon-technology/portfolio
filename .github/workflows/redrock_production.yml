@@ -1,0 +1,36 @@
+name: RedRock Software Production
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    defaults:
+      run:
+        working-directory: ./server
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+
+      - run: cd /home/ajax/actions-runner/_work/redrock/redrock/client && npm ci && npm run build
+      - run: npm ci
+      - run: cp /home/ajax/config.js /home/ajax/actions-runner/_work/redrock/redrock/server/config.js
+      - run: cp /home/ajax/credentials.json /home/ajax/actions-runner/_work/redrock/redrock/server/Tracking/credentials.json
+      - run: pm2 delete server
+        continue-on-error: true
+      - run: pm2 flush
+      - run: cd /home/ajax/actions-runner/_work/redrock/redrock && rm -rf client README_images README.md .git .gitignore .github
+        continue-on-error: true
+      - run: NODE_ENV=PROD pm2 start server.js
