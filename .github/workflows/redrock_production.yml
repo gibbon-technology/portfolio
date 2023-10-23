@@ -24,7 +24,7 @@ jobs:
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
 
-      - run: cd /home/ajax/actions-runner/_work/redrock/redrock/client && npm ci && npm run build
+      - run: cd /home/ajax/actions-runner/_work/redrock_software/redrock_software/client && npm ci && npm run build
       - run: npm ci
       - run: cp /home/ajax/config.js /home/ajax/actions-runner/_work/redrock/redrock/server/config.js
       - run: cp /home/ajax/credentials.json /home/ajax/actions-runner/_work/redrock/redrock/server/Tracking/credentials.json
