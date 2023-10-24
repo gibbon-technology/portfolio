@@ -58,6 +58,12 @@ export default function Dashboard({ user, token, signout }) {
         <Link to="/chat" className="btn btn-primary btn-lg w-100 mb-3">
           Chat
         </Link>
+        <Link
+          to="/password-generator"
+          className="btn btn-primary btn-lg w-100 mb-3"
+        >
+          Password manager
+        </Link>
         <Link to="/task-manager" className="btn btn-primary btn-lg mb-3">
           Task manager
         </Link>

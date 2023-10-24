@@ -24,6 +24,7 @@ import redrockFetch from "./fetch";
 import config from "./app_config.js";
 import ImageCompressor from "./pages/Protected/ImageCompressor";
 import ScheduleEmail from "./pages/Protected/ScheduleEmail";
+import PasswordGen from "./pages/Protected/PasswordGen";
 
 const Weather = lazy(() => import("./pages/Weather.jsx"));
 
@@ -179,6 +180,14 @@ const App = () => {
             element={
               <PrivateRoute user={user}>
                 <ScheduleEmail user={user} token={token} />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/password-generator"
+            element={
+              <PrivateRoute user={user}>
+                <PasswordGen user={user} token={token} />
               </PrivateRoute>
             }
           />
