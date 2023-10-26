@@ -9,27 +9,26 @@ export const handleTracking = async (req, res, next) => {
   if (match) {
     console.log("Match"); //
     await TrackerDB.updateOne({ ip }, { $inc: { requestCount: 1 } });
+    return next();
   }
 
   // Not match; Add new IP
-  if (!match.value) {
-    console.log("No match"); //
-    const d = new Date();
-    const date = d.toLocaleDateString();
-    const time = d.toLocaleTimeString();
-    const dateTimeFormat = `${date} @ ${time}`;
-    const info = await whois(ip);
-    const { orgName: company, address, city, stateProv, country } = info;
-    const location = `${address} > ${city} > ${stateProv}, ${country}`;
-    TrackerDB.insertOne({
-      ip,
-      time: dateTimeFormat,
-      company,
-      location,
-      requestCount: 0,
-    });
-    append_data(ip, company, location);
-  }
+  console.log("No match"); //
+  const d = new Date();
+  const date = d.toLocaleDateString();
+  const time = d.toLocaleTimeString();
+  const dateTimeFormat = `${date} @ ${time}`;
+  const info = await whois(ip);
+  const { orgName: company, address, city, stateProv, country } = info;
+  const location = `${address} > ${city} > ${stateProv}, ${country}`;
+  TrackerDB.insertOne({
+    ip,
+    time: dateTimeFormat,
+    company,
+    location,
+    requestCount: 0,
+  });
+  append_data(ip, company, location);
 
   next();
 };
