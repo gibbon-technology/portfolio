@@ -4,13 +4,16 @@ import whois from "whois-json";
 
 export const handleTracking = async (req, res, next) => {
   const { ip } = req;
-  const match = await TrackerDB.findOneAndUpdate(
-    { ip },
-    { $inc: { requestCount: 1 } }
-  );
+  const match = await TrackerDB.findOne({ ip });
+
+  if (match) {
+    console.log("Match"); //
+    await TrackerDB.updateOne({ ip }, { $inc: { requestCount: 1 } });
+  }
 
   // Not match; Add new IP
   if (!match.value) {
+    console.log("No match"); //
     const d = new Date();
     const date = d.toLocaleDateString();
     const time = d.toLocaleTimeString();
