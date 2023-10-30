@@ -25,6 +25,7 @@ import config from "./app_config.js";
 import ImageCompressor from "./pages/Protected/ImageCompressor";
 import ScheduleEmail from "./pages/Protected/ScheduleEmail";
 import PasswordGen from "./pages/Protected/PasswordGen";
+import ServerManager from "./pages/ServerManager";
 
 const Weather = lazy(() => import("./pages/Weather.jsx"));
 
@@ -188,6 +189,14 @@ const App = () => {
             element={
               <PrivateRoute user={user}>
                 <PasswordGen user={user} token={token} />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/manage-server"
+            element={
+              <PrivateRoute user={user}>
+                <ServerManager user={user} token={token} />
               </PrivateRoute>
             }
           />

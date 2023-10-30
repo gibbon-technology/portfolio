@@ -3,11 +3,12 @@ import { registerUser, duplicateUsername } from "./Auth.js";
 import { Router } from "express";
 import { join } from "path";
 import { v4 } from "uuid";
-import { spawn } from "child_process";
+import { spawn, exec } from "child_process";
 import fs from "fs";
 import config from "../config.js";
 import validator from "validator";
 import verifyToken from "../validateToken.js";
+import writeMC_log from "../logs/minecraftLog.js";
 import * as emailConfig from "../email_config.js";
 import * as cron from "node-cron";
 
@@ -303,4 +304,53 @@ router.get("/search-users", async (req, res) => {
   });
   res.json({ data: keyArray });
 });
+
+// MC SERVER //
+
+router.get("/get-server-status", async (req, res) => {
+  const status_filepath =
+    "C:\\Users\\rdavi\\OneDrive\\Desktop\\Code\\new_visitor\\status.txt";
+  const status = fs.readFileSync(status_filepath, "utf-8");
+
+  res.json({ data: status });
+});
+
+router.get("/start-server", async (req, res) => {
+  exec(
+    "bash remote_start.sh",
+    {
+      cwd: production
+        ? "~/minecraft/commands"
+        : "C:\\Users\\rdavi\\OneDrive\\Desktop\\Code\\new_visitor",
+    },
+    (error, stdout, stderr) => {
+      if (error !== null) {
+        res.json({ data: `exec error: ${error}` });
+      } else {
+        res.json({ data: stdout });
+        writeMC_log("STARTED", req.username);
+      }
+    }
+  );
+});
+
+router.get("/stop-server", async (req, res) => {
+  exec(
+    "bash remote_stop.sh",
+    {
+      cwd: production
+        ? "~/minecraft/commands"
+        : "C:\\Users\\rdavi\\OneDrive\\Desktop\\Code\\new_visitor",
+    },
+    (error, stdout, stderr) => {
+      if (error !== null) {
+        res.json({ data: `exec error: ${error}` });
+      } else {
+        res.json({ data: stdout });
+        writeMC_log("STOPPED", req.username);
+      }
+    }
+  );
+});
+
 export default router;
