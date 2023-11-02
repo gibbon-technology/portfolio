@@ -29,7 +29,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/admin", adminRouter);
 
 app.get("/*", handleTracking, async (req, res) => {
-  console.log("Running /*", req);
+  // console.log("Running /*", req);
   res.sendFile(reactIndexPage);
 });
 

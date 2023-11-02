@@ -309,7 +309,7 @@ router.get("/search-users", async (req, res) => {
 
 router.get("/get-server-status", async (req, res) => {
   const status_filepath = production
-    ? "/home/ajax/minecraft/commands/status.txt"
+    ? "/home/ryan/minecraft/commands/status.txt"
     : "C:\\Users\\rdavi\\OneDrive\\Desktop\\Code\\new_visitor\\status.txt";
   const status = fs.readFileSync(status_filepath, "utf-8");
   res.json({ data: status });
@@ -320,7 +320,7 @@ router.get("/start-server", async (req, res) => {
     "bash server_start.sh",
     {
       cwd: production
-        ? "/home/ajax/minecraft/commands"
+        ? "/home/ryan/minecraft/commands"
         : "C:\\Users\\rdavi\\OneDrive\\Desktop\\Code\\new_visitor",
     },
     (error, stdout, stderr) => {
@@ -339,7 +339,7 @@ router.get("/stop-server", async (req, res) => {
     "bash server_stop.sh",
     {
       cwd: production
-        ? "/home/ajax/minecraft/commands"
+        ? "/home/ryan/minecraft/commands"
         : "C:\\Users\\rdavi\\OneDrive\\Desktop\\Code\\new_visitor",
     },
     (error, stdout, stderr) => {
