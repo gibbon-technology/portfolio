@@ -27,7 +27,7 @@ jobs:
 
       # - run: cd /home/ryan/actions-runner/_work/redrock_software/redrock_software/client && npm ci
 
-      - run: cp /home/ryan/config.js /home/ryan/actions-runner/_work/redrock_software/redrock_software/server/config.js
+      - run: cp /home/ryan/files/config.js /home/ryan/actions-runner/_work/redrock_software/redrock_software/server/config.js
 
       - run: pwd
 
