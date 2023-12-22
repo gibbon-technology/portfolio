@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import sec_plus from "../assets/sec_plus.png";
 import github from "../assets/logos/github.png";
 import redrockFetch from "../fetch.js";
 
 export default function Home() {
+  const color1 = "#032631";
+  const color2 = "#c6e0e9";
   const [updates, setUpdates] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -17,9 +20,33 @@ export default function Home() {
 
   return (
     <>
+      <img
+        src={sec_plus}
+        alt="CompTIA Security+ logo"
+        width="300px"
+        style={{ marginTop: "75px" }}
+      />
+      <h2
+        style={{
+          marginTop: "50px",
+          textAlign: "center",
+          width: "95%",
+          maxWidth: "600px",
+          backgroundColor: color2,
+          color: color1,
+          padding: "50px 0",
+          borderRadius: "20px",
+          fontWeight: "500",
+        }}
+      >
+        JUNIOR SECURITY ANALYST
+        <br />
+        at NOMAD-EDGE INC
+      </h2>
+
       <div
         style={{
-          margin: "20px 0",
+          marginTop: "50px",
           width: "95%",
           maxWidth: "600px",
           display: "flex",
@@ -27,26 +54,18 @@ export default function Home() {
           alignItems: "center",
         }}
       >
-        <h2 style={{ textAlign: "center" }}>
-          My name is Ryan, welcome to my portfolio website. Below is a link to
-          my Github to view all of my repositories.
-        </h2>
-        <h2
+        <h3
+          style={{ textAlign: "center", marginTop: "50px", fontSize: "2.5rem" }}
+        >
+          Direct email
+        </h3>
+        <h3
           style={{
-            margin: "20px",
-            width: "100%",
             textAlign: "center",
-            backgroundColor: "#c6e0e9",
-            color: "#032631",
-            padding: "1rem",
-            border: "1px solid white",
-            borderRadius: "10px",
+            marginBottom: "50px",
+            fontSize: "2.5rem",
           }}
         >
-          Looking for work
-        </h2>
-        <h3 style={{ textAlign: "center" }}>Direct email</h3>
-        <h3 style={{ textAlign: "center", marginBottom: "50px" }}>
           <a
             href="mailto:ryan.codes@icloud.com"
             style={{ textDecoration: "none", color: "#1982fc" }}
@@ -65,7 +84,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={github} alt="Github logo" style={{ maxWidth: "75px" }} />
+          <img src={github} alt="Github logo" style={{ maxWidth: "100px" }} />
         </a>
       </div>
       {loading ? (
@@ -73,10 +92,9 @@ export default function Home() {
       ) : updates.length > 0 ? (
         <div
           style={{
-            margin: "0px 0",
+            margin: "100px 0",
             width: "90%",
             maxWidth: "600px",
-            marginBottom: "100px",
           }}
         >
           <h1

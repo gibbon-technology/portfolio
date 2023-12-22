@@ -5,7 +5,7 @@ const client = new MongoClient(config.mongodb.connectionString, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
-    deprecationErrors: true,
+    deprecationErrors: false,
   },
 });
 

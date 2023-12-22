@@ -3,7 +3,6 @@ import express from "express";
 import authRouter from "./Routes/Auth.js";
 import baseRouter from "./Routes/Base.js";
 import adminRouter from "./Routes/Admin.js";
-import handleTracking from "./Tracking/tracker.js";
 
 console.clear();
 process.env.NODE_ENV === "PROD"
@@ -21,15 +20,12 @@ app.use(express.static(mainPublicFolder));
 app.use(express.json({ limit: "5mb" }));
 app.set("trust proxy", true);
 
-app.use("/api/base", handleTracking); // TRACKING
 app.use("/api/base", baseRouter);
-app.use("/api/auth", handleTracking); // TRACKING
 app.use("/api/auth", authRouter);
 
 app.use("/api/admin", adminRouter);
 
-app.get("/*", handleTracking, async (req, res) => {
-  // console.log("Running /*", req);
+app.get("/*", async (req, res) => {
   res.sendFile(reactIndexPage);
 });
 
