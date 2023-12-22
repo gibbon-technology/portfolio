@@ -35,7 +35,7 @@ jobs:
       - run: cp /home/ryan/config.js /home/ryan/server/config.js
       - run: npm ci
 
-      - run: rm -rf /home/ryan/actions-runner
+      - run: rm -rf /home/ryan/actions-runner/_work
         # continue-on-error: true
 
       - run: pm2 delete server
