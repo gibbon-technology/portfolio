@@ -7,9 +7,6 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-    defaults:
-      run:
-        working-directory: ./server
 
     strategy:
       matrix:
@@ -25,14 +22,11 @@ jobs:
           cache-dependency-path: "**/package-lock.json"
 
       # - run: cd /home/ryan/actions-runner/_work/redrock_software/redrock_software/client && npm ci
-      - run: pwd
-
       - run: mv /home/ryan/actions-runner/_work/redrock_software/redrock_software/server /home/ryan/server
         # continue-on-error: true
 
-      - run: cd /home/ryan/server
-
       - run: cp /home/ryan/config.js /home/ryan/server/config.js
+      - run: cd /home/ryan/server
       - run: npm ci
 
       - run: rm -rf /home/ryan/actions-runner/_work
