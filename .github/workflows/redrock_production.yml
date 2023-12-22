@@ -8,6 +8,10 @@ jobs:
   build:
     runs-on: self-hosted
 
+    defaults:
+      run:
+        working-directory: ./server
+
     strategy:
       matrix:
         node-version: [18.x]
@@ -23,21 +27,17 @@ jobs:
 
       # - run: cd /home/ryan/actions-runner/_work/redrock_software/redrock_software/client && npm ci
 
-      - run: rm -rf /home/ryan/server
-        continue-on-error: true
+      - run: cp /home/ryan/config.js /home/ryan/actions-runner/_work/redrock_software/redrock_software/server/config.js
 
-      - run: mv /home/ryan/actions-runner/_work/redrock_software/redrock_software/server /home/ryan/server
+      - run: pwd
 
-      - run: cp /home/ryan/config.js /home/ryan/server/config.js
-
-      - run: cd /home/ryan/server && npm ci
-
-      - run: rm -rf /home/ryan/actions-runner/_work
-        # continue-on-error: true
+      - run: npm ci
 
       - run: pm2 delete server
         continue-on-error: true
 
       - run: pm2 flush
 
-      - run: cd /home/ryan/server && NODE_ENV=PROD pm2 start server.js
+      - run: cd /home/ajax/actions-runner/_work/redrock_software/redrock_software && rm -rf client README_images README.md .git .gitignore .github
+
+      - run: NODE_ENV=PROD pm2 start server.js
