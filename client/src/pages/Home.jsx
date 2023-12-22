@@ -63,7 +63,7 @@ export default function Home() {
           style={{
             textAlign: "center",
             marginBottom: "50px",
-            fontSize: "2.5rem",
+            fontSize: "1.8rem",
           }}
         >
           <a
@@ -88,7 +88,7 @@ export default function Home() {
         </a>
       </div>
       {loading ? (
-        <h1>Loading...</h1>
+        <h1 style={{ margin: "150px 0" }}>Loading...</h1>
       ) : updates.length > 0 ? (
         <div
           style={{
