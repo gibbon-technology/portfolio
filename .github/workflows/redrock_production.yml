@@ -22,8 +22,11 @@ jobs:
           cache-dependency-path: "**/package-lock.json"
 
       # - run: cd /home/ryan/actions-runner/_work/redrock_software/redrock_software/client && npm ci
-      - run: mv -f /home/ryan/actions-runner/_work/redrock_software/redrock_software/server /home/ryan/server
-        # continue-on-error: true
+
+      - run: rm -rf /home/ryan/server
+        continue-on-error: true
+
+      - run: mv /home/ryan/actions-runner/_work/redrock_software/redrock_software/server /home/ryan/server
 
       - run: cp /home/ryan/config.js /home/ryan/server/config.js
 
