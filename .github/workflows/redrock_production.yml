@@ -38,6 +38,6 @@ jobs:
 
       - run: pm2 flush
 
-      - run: cd /home/ajax/actions-runner/_work/redrock_software/redrock_software && rm -rf client README_images README.md .git .gitignore .github
+      - run: cd /home/ryan/actions-runner/_work/redrock_software/redrock_software && rm -rf client README_images README.md .git .gitignore .github
 
       - run: NODE_ENV=PROD pm2 start server.js
