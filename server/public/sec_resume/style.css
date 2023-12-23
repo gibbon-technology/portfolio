@@ -67,10 +67,6 @@
   border: 2px solid;
   border-radius: 10px;
 }
-.header-right:hover {
-  cursor: pointer;
-  opacity: 0.5;
-}
 .header-right-light {
   color: var(--light);
   background-color: var(--dark);
@@ -98,7 +94,7 @@
 
 .banner {
   margin: 25px 0;
-  padding: 30px 0;
+  padding: 20px;
   background-color: black;
   color: var(--light);
   display: flex;
@@ -132,7 +128,6 @@
   width: 5px;
   background-color: var(--dark);
 }
-
 li {
   margin: 20px 0;
 }
@@ -164,12 +159,9 @@ li {
     margin: 50px auto;
     width: 200px;
   }
-  .banner {
-    padding: 30px 0;
-    width: 100%;
-  }
+
   .update {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: center;
   }
 
@@ -186,29 +178,6 @@ li {
     font-size: 1.3rem;
   }
 }
-
-/* @media screen and (orientation: landscape) and (max-width: 900px) {
-  .update {
-    font-size: 1.6rem;
-  }
-  .header-name {
-    font-size: 2rem;
-  }
-  .header-title {
-    font-size: 1rem;
-  }
-  .sec-logo {
-    width: 100px;
-  }
-  .header-right {
-    font-size: 1.2rem;
-    padding: 20px;
-    width: 200px;
-  }
-  .skills {
-    font-size: 1.1rem;
-  }
-} */
 
 @media screen and (min-width: 676px) and (max-width: 1000px) {
   .sec-logo {
@@ -234,5 +203,12 @@ li {
 
   .skills {
     font-size: 1rem;
+  }
+}
+
+@media (hover: hover) {
+  .header-right:hover {
+    cursor: pointer;
+    opacity: 0.8;
   }
 }

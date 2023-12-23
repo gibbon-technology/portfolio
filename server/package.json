@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon server.js",
-    "app": "concurrently \"npm start\" \"cd ../client && npm run dev\"",
-    "build": "cd ../client && npm run build && cd ../server && git add -A && git commit -m $npm_config_message && git push"
+    "app": "concurrently \"npm start\" \"cd ../client && npm run dev\""
   },
   "author": "RedRock Software",
   "license": "ISC",

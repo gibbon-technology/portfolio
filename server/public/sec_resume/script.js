@@ -19,8 +19,8 @@ const toggleMode = (mode) => {
       rule.classList.add("vert-rule-dark");
       rule.classList.remove("vert-rule-light");
     });
-    modeInfo.classList.add("mode-info-dark");
-    modeInfo.classList.remove("mode-info-light");
+    modeInfo.classList.add("header-right-dark");
+    modeInfo.classList.remove("header-right-light");
     staticContainer.classList.add("static-dark");
     staticContainer.classList.remove("static-light");
     dynamicContainer.classList.add("dynamic-dark");
@@ -35,8 +35,8 @@ const toggleMode = (mode) => {
       rule.classList.add("vert-rule-light");
       rule.classList.remove("vert-rule-dark");
     });
-    modeInfo.classList.add("mode-info-light");
-    modeInfo.classList.remove("mode-info-dark");
+    modeInfo.classList.add("header-right-light");
+    modeInfo.classList.remove("header-right-dark");
     staticContainer.classList.add("static-light");
     staticContainer.classList.remove("static-dark");
     dynamicContainer.classList.add("dynamic-light");
