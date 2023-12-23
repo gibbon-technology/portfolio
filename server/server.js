@@ -7,7 +7,7 @@ import adminRouter from "./Routes/Admin.js";
 console.clear();
 process.env.NODE_ENV === "PROD"
   ? console.log("Production")
-  : console.log("Development");
+  : console.log("Development\nhttp://localhost:9000");
 
 const root = process.cwd();
 const app = express();

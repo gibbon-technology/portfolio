@@ -110,6 +110,7 @@
 
 .update {
   font-size: 2.2rem;
+  text-align: center;
 }
 
 .skills {
@@ -136,7 +137,7 @@ li {
   margin: 20px 0;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 675px) {
   .dynamic-container {
     height: 97%;
     width: 95%;
@@ -161,6 +162,7 @@ li {
   }
   .sec-logo {
     margin: 50px auto;
+    width: 200px;
   }
   .banner {
     padding: 30px 0;
@@ -170,11 +172,7 @@ li {
     font-size: 1.5rem;
     text-align: center;
   }
-  /* .header-right {
-    font-size: 1.2rem;
-    padding: 20px;
-    width: 95%;
-  } */
+
   .skills {
     flex-direction: column;
     margin-bottom: 150px;
@@ -189,7 +187,7 @@ li {
   }
 }
 
-@media screen and (orientation: landscape) and (max-width: 900px) {
+/* @media screen and (orientation: landscape) and (max-width: 900px) {
   .update {
     font-size: 1.6rem;
   }
@@ -209,5 +207,32 @@ li {
   }
   .skills {
     font-size: 1.1rem;
+  }
+} */
+
+@media screen and (min-width: 676px) and (max-width: 1000px) {
+  .sec-logo {
+    width: 100px;
+  }
+  .header-name {
+    font-size: 2rem;
+  }
+  .header-title {
+    font-size: 1rem;
+  }
+  .header-right {
+    font-size: 1.2rem;
+    padding: 20px 0;
+    width: 200px;
+  }
+  .update {
+    font-size: 1.6rem;
+  }
+  .sec {
+    margin: 0;
+  }
+
+  .skills {
+    font-size: 1rem;
   }
 }
