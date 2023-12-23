@@ -13,12 +13,17 @@ const root = process.cwd();
 const app = express();
 
 const mainPublicFolder = join(root, "public/main");
+const secFolder = join(root, "public/sec_resume");
 const reactIndexPage = join(mainPublicFolder, "index.html");
 
 app.use(express.static("public"));
 app.use(express.static(mainPublicFolder));
 app.use(express.json({ limit: "5mb" }));
 app.set("trust proxy", true);
+
+app.get("/security", (req, res) => {
+  res.sendFile(join(secFolder, "index.html"));
+});
 
 app.use("/api/base", baseRouter);
 app.use("/api/auth", authRouter);
