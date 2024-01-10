@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+:root {
+  --light: #c6e0e9;
+  --dark: #032631;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.static-container {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dynamic-container {
+  width: 96vw;
+  max-width: 1800px;
+  height: 90vh;
+  border-radius: 25px;
+  padding: 0 50px 25px 50px;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.header-left {
+  display: flex;
+}
+.header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-name {
+  font-size: 3.5rem;
+}
+.header-title {
+  font-size: 1.7rem;
+}
+.buttons {
+  display: flex;
+}
+.header-right {
+  width: 250px;
+  font-size: 2rem;
+  padding: 30px 0;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+.sec-logo {
+  margin: 0 25px;
+}
+
+.seperator {
+  height: 10px;
+  border-radius: 10px;
+}
+
+.banner {
+  margin: 25px 0;
+  padding: 20px;
+  background-color: black;
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.update {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.skills {
+  font-size: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.skill {
+  margin-left: 25px;
+  width: 25%;
+}
+.sec {
+  margin-left: 25px;
+}
+
+li {
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 675px) {
+  .dynamic-container {
+    height: 97%;
+    width: 95%;
+    padding: 0 10px;
+  }
+  .header {
+    flex-direction: column;
+    margin: 0;
+  }
+  .header-left {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-info {
+    order: -1;
+    margin-top: 50px;
+  }
+  .buttons {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  .header-right {
+    margin: 20px 0;
+    width: 100%;
+    padding: 30px 0;
+  }
+  .sec-logo {
+    margin: 50px auto;
+    width: 200px;
+  }
+  .seperator {
+    margin: 80px 0;
+  }
+
+  .update {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .skills {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 150px;
+  }
+
+  .skill {
+    margin: 40px 0;
+    font-size: 1.2rem;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 676px) and (max-width: 1000px) and (orientation: portrait) {
+  .sec-logo {
+    width: 100px;
+  }
+  .header-name {
+    font-size: 2rem;
+  }
+  .header-title {
+    font-size: 1rem;
+  }
+
+  .update {
+    font-size: 1.6rem;
+  }
+  .sec {
+    margin: 0;
+  }
+
+  .skills {
+    font-size: 1rem;
+    align-items: center;
+    margin-bottom: 150px;
+  }
+  .skill {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 675px) {
+  .header-name {
+    font-size: 2rem;
+  }
+  .header-info {
+    font-size: 1.5rem;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .header-right {
+    font-size: 1.3rem;
+    width: 200px;
+    margin: 10px 0;
+    padding: 20px 0;
+  }
+}
+
+@media (hover: hover) {
+  .header-right:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}
