@@ -18,6 +18,7 @@ const reactIndexPage = join(mainPublicFolder, "index.html");
 
 app.use(express.static("public"));
 app.use(express.static(mainPublicFolder));
+app.use(express.static(secFolder));
 app.use(express.json({ limit: "5mb" }));
 app.set("trust proxy", true);
 
