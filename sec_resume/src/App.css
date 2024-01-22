@@ -30,14 +30,6 @@
   padding: 0 50px 25px 50px;
   overflow-y: auto;
 }
-.dynamic-light {
-  color: var(--dark);
-  background-color: var(--light);
-}
-.dynamic-dark {
-  color: var(--light);
-  background-color: var(--dark);
-}
 
 .header {
   display: flex;
@@ -60,36 +52,24 @@
 .header-title {
   font-size: 1.7rem;
 }
+.buttons {
+  display: flex;
+}
 .header-right {
   width: 250px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 30px 0;
   border: 2px solid;
   border-radius: 10px;
 }
-.header-right-light {
-  color: var(--light);
-  background-color: var(--dark);
-  border-color: var(--light);
-}
-.header-right-dark {
-  color: var(--dark);
-  background-color: var(--light);
-  border-color: var(--dark);
-}
+
 .sec-logo {
-  margin-right: 50px;
+  margin: 0 25px;
 }
 
 .seperator {
   height: 10px;
   border-radius: 10px;
-}
-.sep-dark {
-  background-color: var(--light);
-}
-.sep-light {
-  background-color: var(--dark);
 }
 
 .banner {
@@ -110,24 +90,19 @@
 }
 
 .skills {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 .skill {
   margin-left: 25px;
+  width: 25%;
 }
 .sec {
-  margin-left: 40px;
+  margin-left: 25px;
 }
-.vert-rule-dark {
-  width: 5px;
-  background-color: var(--light);
-}
-.vert-rule-light {
-  width: 5px;
-  background-color: var(--dark);
-}
+
 li {
   margin: 20px 0;
 }
@@ -150,14 +125,21 @@ li {
     order: -1;
     margin-top: 50px;
   }
+  .buttons {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
   .header-right {
     margin: 20px 0;
     width: 100%;
-    padding: 20px 0;
+    padding: 30px 0;
   }
   .sec-logo {
     margin: 50px auto;
     width: 200px;
+  }
+  .seperator {
+    margin: 80px 0;
   }
 
   .update {
@@ -167,19 +149,18 @@ li {
 
   .skills {
     flex-direction: column;
+    align-items: center;
     margin-bottom: 150px;
   }
-  .vert-rule {
-    width: 100%;
-    height: 5px;
-    margin: 20px 0;
-  }
+
   .skill {
-    font-size: 1.3rem;
+    margin: 40px 0;
+    font-size: 1.2rem;
+    width: 90%;
   }
 }
 
-@media screen and (min-width: 676px) and (max-width: 1000px) {
+@media screen and (min-width: 676px) and (max-width: 1000px) and (orientation: portrait) {
   .sec-logo {
     width: 100px;
   }
@@ -189,11 +170,7 @@ li {
   .header-title {
     font-size: 1rem;
   }
-  .header-right {
-    font-size: 1.2rem;
-    padding: 20px 0;
-    width: 200px;
-  }
+
   .update {
     font-size: 1.6rem;
   }
@@ -203,6 +180,30 @@ li {
 
   .skills {
     font-size: 1rem;
+    align-items: center;
+    margin-bottom: 150px;
+  }
+  .skill {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 675px) {
+  .header-name {
+    font-size: 2rem;
+  }
+  .header-info {
+    font-size: 1.5rem;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .header-right {
+    font-size: 1.3rem;
+    width: 200px;
+    margin: 10px 0;
+    padding: 20px 0;
   }
 }
 
