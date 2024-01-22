@@ -18,7 +18,7 @@ export const sendEmail = async (email) => {
   let success = false;
   const status = await transporter.sendMail({
     to,
-    from: `RedRock Software <${user}>`,
+    from: `GibbonTech Notification <${user}>`,
     subject,
     html: `<h3>${message}</h3>`,
   });
@@ -31,7 +31,7 @@ export const newLogin = async (name) => {
   const time = new Date().toLocaleTimeString();
   const status = await transporter.sendMail({
     to: target,
-    from: `RedRock Software <${user}>`,
+    from: `GibbonTech Notification <${user}>`,
     subject: "New login!",
     html: `<h3>NEW LOGIN FROM:<hr/>\n\t${name}\n\n</h3><hr/><h3>${date} @ ${time}</h3>`,
   });
@@ -41,7 +41,7 @@ export const newLogin = async (name) => {
 export const newChatAlert = async (from, message) => {
   const status = await transporter.sendMail({
     to: target,
-    from: `RedRock Software <${user}>`,
+    from: `GibbonTech Notification <${user}>`,
     subject: "New message!",
     html: `<h2>${from}</h2><br/><br/><h4>${message}</h4>`,
   });
@@ -51,7 +51,7 @@ export const newChatAlert = async (from, message) => {
 export const sendScheduledEmail = async (to, subject, text) => {
   const result = await transporter.sendMail({
     to,
-    from: `RedRock Software <${user}>`,
+    from: `GibbonTech Notification <${user}>`,
     subject,
     text,
   });

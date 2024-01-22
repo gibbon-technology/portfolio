@@ -8,7 +8,7 @@ import fs from "fs";
 import config from "../config.js";
 import validator from "validator";
 import verifyToken from "../validateToken.js";
-import writeMC_log from "../logs/minecraftLog.js";
+// import writeMC_log from "../logs/minecraftLog.js";
 import * as emailConfig from "../email_config.js";
 import * as cron from "node-cron";
 
@@ -328,7 +328,7 @@ router.get("/start-server", async (req, res) => {
         res.json({ data: `exec error: ${error}` });
       } else {
         res.json({ data: stdout });
-        writeMC_log("STARTED", req.username);
+        // writeMC_log("STARTED", req.username);
       }
     }
   );
@@ -347,7 +347,7 @@ router.get("/stop-server", async (req, res) => {
         res.json({ data: `exec error: ${error}` });
       } else {
         res.json({ data: stdout });
-        writeMC_log("STOPPED", req.username);
+        // writeMC_log("STOPPED", req.username);
       }
     }
   );

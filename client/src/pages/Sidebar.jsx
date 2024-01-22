@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import logo from "../assets/logos/logo_dark_cropped.png";
+import logo from "../assets/logos/gibbon_logo.png";
 import logo_notext from "../assets/logos/logo_dark_notext.png";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -70,7 +70,7 @@ export default function Sidebar({ alert }) {
       }}
     >
       <Link to="/">
-        <img src={logo} width="50px" />
+        <img src={logo} width="100px" />
       </Link>
 
       <NavLink to="/about" style={linkStyles}>
