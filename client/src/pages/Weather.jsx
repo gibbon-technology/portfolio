@@ -99,7 +99,7 @@ export default function Weather() {
         <img
           width="75px"
           height="75px"
-          src={`https://redrocksoftware.ca/weatherIcons/${weather.icon}.png`}
+          src={`https://gibbontechnology.ca/weatherIcons/${weather.icon}.png`}
           alt="Weather icon"
         />
         <h3>
