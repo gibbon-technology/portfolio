@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import gt_logo from "../assets/logos/gibbon_logo.png";
 import sec_plus from "../assets/sec_plus.png";
 import github from "../assets/logos/github.png";
 import redrockFetch from "../fetch.js";
@@ -21,10 +22,17 @@ export default function Home() {
   return (
     <>
       <img
+        src={gt_logo}
+        alt="Gibbon Technology Logo"
+        width="500px"
+        style={{ marginBottom: "75px" }}
+      />
+
+      <img
         src={sec_plus}
         alt="CompTIA Security+ logo"
         width="300px"
-        style={{ marginTop: "75px" }}
+        style={{ marginBottom: "100px" }}
       />
       <h2
         style={{
@@ -43,7 +51,6 @@ export default function Home() {
         <br />
         at NOMAD-EDGE INC
       </h2>
-
       <div
         style={{
           marginTop: "50px",

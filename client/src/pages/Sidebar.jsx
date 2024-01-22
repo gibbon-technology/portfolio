@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import logo from "../assets/logos/gibbon_logo.png";
+import logo from "../assets/logos/gibbon_notext.png";
 import logo_notext from "../assets/logos/logo_dark_notext.png";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -70,7 +70,7 @@ export default function Sidebar({ alert }) {
       }}
     >
       <Link to="/">
-        <img src={logo} width="100px" />
+        <img src={logo} width="50px" />
       </Link>
 
       <NavLink to="/about" style={linkStyles}>
@@ -92,21 +92,30 @@ export default function Sidebar({ alert }) {
     <Navbar expand="lg" style={{ width: "100%" }} expanded={expanded}>
       <Container>
         <Navbar.Brand
-          style={{ fontSize: "1.4rem", fontWeight: "700", color: color2 }}
+          style={{
+            fontSize: "1.4rem",
+            fontWeight: "700",
+            color: color2,
+          }}
         >
           <NavLink
             to="/"
-            style={{ textDecoration: "none", color: color2 }}
+            style={{
+              textDecoration: "none",
+              color: color2,
+              display: "flex",
+              alignItems: "center",
+            }}
             onClick={() => setExpanded(false)}
           >
-            <img src={logo_notext} height="50px" style={{ height: "60px" }} />
-            Redrock Software
+            <img src={logo} height="40px" style={{ marginRight: "10px" }} />
+            Gibbon Technology
           </NavLink>
         </Navbar.Brand>
         <Navbar.Toggle
           onClick={() => setExpanded(expanded ? false : "expanded")}
           aria-controls="basic-navbar-nav"
-          style={{ backgroundColor: color2, padding: "0.5rem 1.5rem" }}
+          style={{ backgroundColor: color2, padding: "0.25rem 1rem" }}
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
