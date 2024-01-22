@@ -24,7 +24,7 @@ export default function Home() {
       <img
         src={gt_logo}
         alt="Gibbon Technology Logo"
-        width="500px"
+        height="450px"
         style={{ marginBottom: "75px" }}
       />
 
@@ -47,10 +47,39 @@ export default function Home() {
           fontWeight: "500",
         }}
       >
-        JUNIOR SECURITY ANALYST
+        IT Intern
         <br />
-        at NOMAD-EDGE INC
+        at StatsLog Software
       </h2>
+
+      <h2
+        style={{
+          marginTop: "50px",
+          textAlign: "center",
+          width: "95%",
+          maxWidth: "600px",
+          backgroundColor: color2,
+          color: color1,
+          padding: "50px 0",
+          borderRadius: "20px",
+          fontWeight: "500",
+        }}
+      >
+        Check out my{" "}
+        <a
+          href="https://blog.gibbontechnology.ca"
+          style={{
+            textDecoration: "none",
+            color: color1,
+            border: `2px solid ${color1}`,
+            borderRadius: "20px",
+            padding: "10px 15px",
+          }}
+        >
+          BLOG
+        </a>
+      </h2>
+
       <div
         style={{
           marginTop: "50px",
@@ -77,7 +106,7 @@ export default function Home() {
             href="mailto:ryan.codes@icloud.com"
             style={{ textDecoration: "none", color: "#1982fc" }}
           >
-            ryan.codes@icloud.com
+            ryan@gibbontechnology.ca
           </a>
         </h3>
 
