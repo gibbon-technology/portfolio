@@ -54,7 +54,7 @@ export default function Home() {
       </h2>
 
       <Link
-        to="/resume"
+        to="https://gibbontechnology.ca/resume"
         onMouseOver={(e) => {
           e.target.style.backgroundColor = "#aaa";
         }}
