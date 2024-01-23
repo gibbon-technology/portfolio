@@ -56,6 +56,12 @@
 .buttons {
   display: flex;
 }
+
+@media (hover: hover) {
+  .header-right:hover {
+    opacity: 0.75;
+  }
+}
 .header-right {
   width: 250px;
   font-size: 2rem;

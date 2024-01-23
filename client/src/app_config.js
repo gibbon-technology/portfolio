@@ -1,3 +1,3 @@
 export default {
-  newMessageCheckInterval: 6_000,
+  newMessageCheckInterval: 30_000,
 };

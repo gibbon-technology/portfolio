@@ -1,6 +1,8 @@
 import sec_logo from "../../../assets/logos/sec_plus_logo.png";
 
 export default ({ oppositeTheme, darkMode, setDarkMode }) => {
+  const color1 = "#032631";
+  const color2 = "#c6e0e9";
   return (
     <div>
       <div className="header">
@@ -17,17 +19,18 @@ export default ({ oppositeTheme, darkMode, setDarkMode }) => {
           />
         </div>
         <div className="buttons">
-          <button
+          <a
             className="header-right"
-            style={{ ...oppositeTheme, marginRight: "10px" }}
+            style={{
+              ...oppositeTheme,
+              marginRight: "10px",
+              textDecoration: "none",
+              textAlign: "center",
+            }}
+            href="mailto:ryan@gibbontechnology.ca"
           >
-            <a
-              href="mailto:ryan@gibbontechnology.ca"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Contact
-            </a>
-          </button>
+            Contact
+          </a>
 
           <button
             className="header-right"

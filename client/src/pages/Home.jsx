@@ -56,10 +56,10 @@ export default function Home() {
       <Link
         to="/resume"
         onMouseOver={(e) => {
-          e.target.style.backgroundColor = "#aaa";
+          e.target.style.opacity = 0.75;
         }}
         onMouseOut={(e) => {
-          e.target.style.backgroundColor = color2;
+          e.target.style.opacity = 1;
         }}
         style={{
           marginTop: "50px",
@@ -81,10 +81,10 @@ export default function Home() {
       <Link
         to="https://blog.gibbontechnology.ca"
         onMouseOver={(e) => {
-          e.target.style.backgroundColor = "#aaa";
+          e.target.style.opacity = 0.75;
         }}
         onMouseOut={(e) => {
-          e.target.style.backgroundColor = color2;
+          e.target.style.opacity = 1;
         }}
         style={{
           marginTop: "50px",
@@ -127,7 +127,13 @@ export default function Home() {
         >
           <a
             href="mailto:ryan.codes@icloud.com"
-            style={{ textDecoration: "none", color: "#1982fc" }}
+            style={{ textDecoration: "none", color: "darkgrey" }}
+            onMouseOver={(e) => {
+              e.target.style.opacity = 0.75;
+            }}
+            onMouseOut={(e) => {
+              e.target.style.opacity = 1;
+            }}
           >
             ryan@gibbontechnology.ca
           </a>
