@@ -1,4 +1,4 @@
-import "./App.css";
+import "./Resume.css";
 import { useState } from "react";
 import Header from "./Components/Header.jsx";
 import Banner from "./Components/Banner.jsx";
@@ -8,8 +8,9 @@ function App() {
   const light_color = "#c6e0e9";
   const dark_color = "#032631";
 
-  const bannerText =
-    "Currently studying for INE Security's Junior Penetration Tester";
+  document.title = "Ryan Gibbon Resume";
+
+  const bannerText = "CompTIA Network+ scheduled for February 9, 2024";
 
   const [darkMode, setDarkMode] = useState(true);
 

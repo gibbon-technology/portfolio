@@ -1,4 +1,4 @@
-import sec from "../assets/8X27sg_400px.png";
+import sec_logo from "../../../assets/logos/sec_plus_logo.png";
 
 export default ({ oppositeTheme, darkMode, setDarkMode }) => {
   return (
@@ -11,7 +11,7 @@ export default ({ oppositeTheme, darkMode, setDarkMode }) => {
           </div>
           <img
             className="sec-logo"
-            src={sec}
+            src={sec_logo}
             alt="Security+ logo"
             width="125px"
           />
@@ -22,7 +22,7 @@ export default ({ oppositeTheme, darkMode, setDarkMode }) => {
             style={{ ...oppositeTheme, marginRight: "10px" }}
           >
             <a
-              href="mailto:admin@redrocksoftware.ca"
+              href="mailto:ryan@gibbontechnology.ca"
               style={{ textDecoration: "none", color: "inherit" }}
             >
               Contact

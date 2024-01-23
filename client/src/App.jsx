@@ -26,6 +26,7 @@ import ImageCompressor from "./pages/Protected/ImageCompressor";
 import ScheduleEmail from "./pages/Protected/ScheduleEmail";
 import PasswordGen from "./pages/Protected/PasswordGen";
 import ServerManager from "./pages/ServerManager";
+import Resume from "./pages/Resume/Resume.jsx";
 
 const Weather = lazy(() => import("./pages/Weather.jsx"));
 
@@ -73,8 +74,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout alert={alert} />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="about" index element={<About />} />
           <Route path="skills" index element={<Skills />} />
+          <Route path="resume" index element={<Resume />} />
           <Route
             path="weather"
             index
