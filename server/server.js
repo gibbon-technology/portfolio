@@ -22,7 +22,7 @@ app.use(express.static(secFolder));
 app.use(express.json({ limit: "5mb" }));
 app.set("trust proxy", true);
 
-app.get("/security", (req, res) => {
+app.get("/resume", (req, res) => {
   res.sendFile(join(secFolder, "index.html"));
 });
 

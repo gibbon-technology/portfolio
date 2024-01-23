@@ -3,6 +3,7 @@ import gt_logo from "../assets/logos/gibbon_logo.png";
 import sec_plus from "../assets/sec_plus.png";
 import github from "../assets/logos/github.png";
 import redrockFetch from "../fetch.js";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const color1 = "#032631";
@@ -52,33 +53,55 @@ export default function Home() {
         at StatsLog Software
       </h2>
 
-      <h2
+      <Link
+        to="/resume"
+        onMouseOver={(e) => {
+          e.target.style.backgroundColor = "#aaa";
+        }}
+        onMouseOut={(e) => {
+          e.target.style.backgroundColor = color2;
+        }}
         style={{
           marginTop: "50px",
+          fontSize: "2rem",
+          borderRadius: "20px",
           textAlign: "center",
           width: "95%",
           maxWidth: "600px",
           backgroundColor: color2,
           color: color1,
           padding: "50px 0",
-          borderRadius: "20px",
           fontWeight: "500",
+          textDecoration: "none",
         }}
       >
-        Check out my{" "}
-        <a
-          href="https://blog.gibbontechnology.ca"
-          style={{
-            textDecoration: "none",
-            color: color1,
-            border: `2px solid ${color1}`,
-            borderRadius: "20px",
-            padding: "10px 15px",
-          }}
-        >
-          BLOG
-        </a>
-      </h2>
+        View resume
+      </Link>
+
+      <Link
+        to="https://blog.gibbontechnology.ca"
+        onMouseOver={(e) => {
+          e.target.style.backgroundColor = "#aaa";
+        }}
+        onMouseOut={(e) => {
+          e.target.style.backgroundColor = color2;
+        }}
+        style={{
+          marginTop: "50px",
+          fontSize: "2rem",
+          borderRadius: "20px",
+          textAlign: "center",
+          width: "95%",
+          maxWidth: "600px",
+          backgroundColor: color2,
+          color: color1,
+          padding: "50px 0",
+          fontWeight: "500",
+          textDecoration: "none",
+        }}
+      >
+        View my blog
+      </Link>
 
       <div
         style={{
