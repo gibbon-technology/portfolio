@@ -6,8 +6,8 @@ export default ({ oppositeTheme, darkMode, setDarkMode }) => {
       <div className="header">
         <div className="header-left">
           <div className="header-info">
-            <h1 className="header-name">Ryan David</h1>
-            <h3 className="header-title">Junior Security Analyst</h3>
+            <h1 className="header-name">Ryan Gibbon</h1>
+            <h3 className="header-title">IT Intern</h3>
           </div>
           <img
             className="sec-logo"
