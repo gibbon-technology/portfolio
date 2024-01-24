@@ -16,7 +16,7 @@ export default function About() {
         flexDirection: "column",
       }}
     >
-      <div className="text-center mb-5 w-100">
+      {/* <div className="text-center mb-5 w-100">
         <h2
           style={{
             backgroundColor: "black",
@@ -36,7 +36,7 @@ export default function About() {
             </button>
           </a>
         </h2>
-      </div>
+      </div> */}
 
       <h2
         style={{

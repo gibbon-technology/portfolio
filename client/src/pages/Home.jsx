@@ -25,8 +25,8 @@ export default function Home() {
       <img
         src={gt_logo}
         alt="Gibbon Technology Logo"
-        height="450px"
-        style={{ marginBottom: "75px" }}
+        width="275px"
+        style={{ margin: "125px 0" }}
       />
 
       <img
