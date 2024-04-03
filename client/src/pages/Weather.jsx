@@ -99,7 +99,7 @@ export default function Weather() {
         <img
           width="75px"
           height="75px"
-          src={`https://gibbontechnology.ca/weatherIcons/${weather.icon}.png`}
+          src={`/weatherIcons/${weather.icon}.png`}
           alt="Weather icon"
         />
         <h3>

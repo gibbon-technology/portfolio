@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import logo from "../assets/logos/gibbon_notext.png";
-import logo_notext from "../assets/logos/logo_dark_notext.png";
+import logo from "../assets/logos/logo.png";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";

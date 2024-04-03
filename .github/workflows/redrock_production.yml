@@ -1,43 +1,43 @@
-name: RedRock Software Production
+# name: RedRock Software Production
 
-on:
-  push:
-    branches: ["main"]
+# on:
+#   push:
+#     branches: ["main"]
 
-jobs:
-  build:
-    runs-on: self-hosted
+# jobs:
+#   build:
+#     runs-on: self-hosted
 
-    defaults:
-      run:
-        working-directory: ./server
+#     defaults:
+#       run:
+#         working-directory: ./server
 
-    strategy:
-      matrix:
-        node-version: [18.x]
+#     strategy:
+#       matrix:
+#         node-version: [18.x]
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "npm"
-          cache-dependency-path: "**/package-lock.json"
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#           cache: "npm"
+#           cache-dependency-path: "**/package-lock.json"
 
-      - run: cd /home/ryan/actions-runner/_work/redrock_software/redrock_software/client && npm ci && npm run build
+#       - run: cd /home/ryan/actions-runner/_work/redrock_software/redrock_software/client && npm ci && npm run build
 
-      - run: cp /home/ryan/files/config.js /home/ryan/actions-runner/_work/redrock_software/redrock_software/server/config.js
+#       - run: cp /home/ryan/files/config.js /home/ryan/actions-runner/_work/redrock_software/redrock_software/server/config.js
 
-      - run: pwd
+#       - run: pwd
 
-      - run: npm ci
+#       - run: npm ci
 
-      - run: pm2 delete server
-        continue-on-error: true
+#       - run: pm2 delete server
+#         continue-on-error: true
 
-      - run: pm2 flush
+#       - run: pm2 flush
 
-      - run: cd /home/ryan/actions-runner/_work/redrock_software/redrock_software && rm -rf client README_images README.md .git .gitignore .github
+#       - run: cd /home/ryan/actions-runner/_work/redrock_software/redrock_software && rm -rf client README_images README.md .git .gitignore .github
 
-      - run: NODE_ENV=PROD pm2 start server.js
+#       - run: NODE_ENV=PROD pm2 start server.js

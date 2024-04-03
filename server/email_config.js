@@ -1,7 +1,7 @@
 import { createTransport } from "nodemailer";
 import config from "./config.js";
 
-const { user, pass, host, port, target } = config.nodemailer;
+const { user, pass, host, port, target, send_as_email } = config.nodemailer;
 
 const transporter = createTransport({
   secure: true,
@@ -18,7 +18,7 @@ export const sendEmail = async (email) => {
   let success = false;
   const status = await transporter.sendMail({
     to,
-    from: `GibbonTech Notification <${user}>`,
+    from: `App Alert <${send_as_email}>`,
     subject,
     html: `<h3>${message}</h3>`,
   });
@@ -31,7 +31,7 @@ export const newLogin = async (name) => {
   const time = new Date().toLocaleTimeString();
   const status = await transporter.sendMail({
     to: target,
-    from: `GibbonTech Notification <${user}>`,
+    from: `App Alert <${send_as_email}>`,
     subject: "New login!",
     html: `<h3>NEW LOGIN FROM:<hr/>\n\t${name}\n\n</h3><hr/><h3>${date} @ ${time}</h3>`,
   });
@@ -41,7 +41,7 @@ export const newLogin = async (name) => {
 export const newChatAlert = async (from, message) => {
   const status = await transporter.sendMail({
     to: target,
-    from: `GibbonTech Notification <${user}>`,
+    from: `App Alert <${send_as_email}>`,
     subject: "New message!",
     html: `<h2>${from}</h2><br/><br/><h4>${message}</h4>`,
   });
@@ -51,10 +51,13 @@ export const newChatAlert = async (from, message) => {
 export const sendScheduledEmail = async (to, subject, text) => {
   const result = await transporter.sendMail({
     to,
-    from: `GibbonTech Notification <${user}>`,
+    from: `App Alert <${send_as_email}>`,
     subject,
     text,
   });
   if (result.accepted.length === 1) return console.log("Email sent");
   console.log("Email failed to send");
 };
+
+
+newLogin('Ryan');

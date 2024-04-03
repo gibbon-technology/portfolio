@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import gt_logo from "../assets/logos/gibbon_logo.png";
+import gt_logo from "../assets/logos/gt.png";
 import sec_plus from "../assets/sec_plus.png";
 import github from "../assets/logos/github.png";
 import redrockFetch from "../fetch.js";
@@ -25,8 +25,8 @@ export default function Home() {
       <img
         src={gt_logo}
         alt="Gibbon Technology Logo"
-        width="275px"
-        style={{ margin: "125px 0" }}
+        width="375px"
+        style={{ margin: "100px 0" }}
       />
 
       <img
@@ -35,23 +35,6 @@ export default function Home() {
         width="300px"
         style={{ marginBottom: "100px" }}
       />
-      <h2
-        style={{
-          marginTop: "50px",
-          textAlign: "center",
-          width: "95%",
-          maxWidth: "600px",
-          backgroundColor: color2,
-          color: color1,
-          padding: "50px 0",
-          borderRadius: "20px",
-          fontWeight: "500",
-        }}
-      >
-        IT Intern
-        <br />
-        at StatsLog Software
-      </h2>
 
       <Link
         to="/resume"
@@ -62,45 +45,20 @@ export default function Home() {
           e.target.style.opacity = 1;
         }}
         style={{
-          marginTop: "50px",
-          fontSize: "2rem",
+          marginTop: "40px",
+          fontSize: "1.8rem",
           borderRadius: "20px",
           textAlign: "center",
           width: "95%",
-          maxWidth: "600px",
+          maxWidth: "350px",
           backgroundColor: color2,
           color: color1,
-          padding: "50px 0",
+          padding: "20px 0",
           fontWeight: "500",
           textDecoration: "none",
         }}
       >
         View resume
-      </Link>
-
-      <Link
-        to="https://blog.gibbontechnology.ca"
-        onMouseOver={(e) => {
-          e.target.style.opacity = 0.75;
-        }}
-        onMouseOut={(e) => {
-          e.target.style.opacity = 1;
-        }}
-        style={{
-          marginTop: "50px",
-          fontSize: "2rem",
-          borderRadius: "20px",
-          textAlign: "center",
-          width: "95%",
-          maxWidth: "600px",
-          backgroundColor: color2,
-          color: color1,
-          padding: "50px 0",
-          fontWeight: "500",
-          textDecoration: "none",
-        }}
-      >
-        View my blog
       </Link>
 
       <div
@@ -127,7 +85,7 @@ export default function Home() {
         >
           <a
             href="mailto:ryan.codes@icloud.com"
-            style={{ textDecoration: "none", color: "darkgrey" }}
+            style={{ textDecoration: "none", color: "white" }}
             onMouseOver={(e) => {
               e.target.style.opacity = 0.75;
             }}

@@ -12,11 +12,11 @@ const client = new MongoClient(config.mongodb.connectionString, {
 client
   .connect()
   .then(() => {
-    console.log("Connected to DatabaseThreeOne");
+    console.log("Connected to Cluster_B502");
   })
   .catch((err) => console.log(err));
 
-const db = client.db("redrock");
+const db = client.db("ozone");
 
 const UpdateDB = db.collection("updates");
 const UserDB = db.collection("users");

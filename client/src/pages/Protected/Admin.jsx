@@ -82,12 +82,7 @@ export default function Admin({ user, token }) {
           </div>
         </div>
         <div className="mb-2 w-100">
-          <Link
-            to="/manage-server"
-            className="btn btn-danger btn-lg w-100 my-2"
-          >
-            Manage MC server
-          </Link>
+
           <Link to="/send-email" className="btn btn-primary btn-lg w-100 my-2">
             Send email
           </Link>
