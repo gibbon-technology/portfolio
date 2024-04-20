@@ -1,4 +1,4 @@
-# Welcome to RedRockSoftware
+# Welcome to the my personal website
 
 ### This file is intended to walk you through the features included in my app.
 
